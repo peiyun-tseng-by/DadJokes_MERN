@@ -8,9 +8,10 @@
     "client": "npm start --prefix react-test",
     "start": "npm run server",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "install-server": "npm install --prefix server",
-    "package-ui": "npm install --prefix react-test && npm run build --prefix react-test",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run install-server && npm run package-ui"
+    "install-server": "cd server && npm install && cd ..",
+    "package-ui": "cd react-test && npm install && npm run build && cd ..",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run install-server && npm run package-ui",
+    "window-postbuild": "set NPM_CONFIG_PRODUCTION=false && npm run install-server && npm run package-ui"
   },
   "author": "Pei-Yun",
   "license": "ISC",
