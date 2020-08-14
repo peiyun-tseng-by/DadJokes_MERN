@@ -4,7 +4,7 @@
   "description": "Dad Jokes App",
   "main": "index.js",
   "scripts": {
-    "server": "npm run server --prefix server",
+    "server": "npm run start --prefix server",
     "client": "npm start --prefix react-test",
     "start": "npm run server",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
