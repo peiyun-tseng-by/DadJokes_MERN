@@ -1,0 +1,17 @@
+{
+  "name": "react-test",
+  "version": "1.0.0",
+  "description": "Dad Jokes App",
+  "main": "index.js",
+  "scripts": {
+    "server": "npm run server --prefix server",
+    "client": "npm start --prefix react-test",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix react-test && npm run build --prefix react-test"
+  },
+  "author": "Pei-Yun",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.3.0"
+  }
+}
