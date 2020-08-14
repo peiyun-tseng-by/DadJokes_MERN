@@ -6,8 +6,11 @@
   "scripts": {
     "server": "npm run server --prefix server",
     "client": "npm start --prefix react-test",
-    "start": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix react-test && npm run build --prefix react-test"
+    "start": "npm run server",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "install-server": "npm install --prefix server",
+    "package-ui": "npm install --prefix react-test && npm run build --prefix react-test",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run install-server && npm run package-ui"
   },
   "author": "Pei-Yun",
   "license": "ISC",
